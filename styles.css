@@ -42,24 +42,21 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    justify-content: center;
 }
 
 .logo-img {
     height: 40px;
     width: auto;
     transition: transform 0.3s ease;
+    filter: brightness(0) invert(1);
 }
 
 .logo-img:hover {
     transform: scale(1.05);
 }
 
-.logo-text {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #ffffff;
-}
+
 
 /* Navigation Styles */
 .nav-menu {
@@ -151,10 +148,7 @@ body {
         transform: rotate(45deg) translate(-5px, -6px);
     }
 
-    /* Mobile Logo Adjustments */
-    .logo-text {
-        font-size: 1.3rem;
-    }
+
 }
 
 @media (max-width: 480px) {
@@ -162,9 +156,7 @@ body {
         padding: 0 15px;
     }
 
-    .logo-text {
-        font-size: 1.2rem;
-    }
+
 
     .logo-img {
         height: 35px;

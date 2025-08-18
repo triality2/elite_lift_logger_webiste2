@@ -37,21 +37,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Header scroll effect
+// Combined scroll handler for header and navigation
 window.addEventListener('scroll', () => {
     const header = document.querySelector('.header');
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    // Header scroll effect
     if (window.scrollY > 50) {
         header.classList.add('scrolled');
     } else {
         header.classList.remove('scrolled');
     }
-});
-
-// Add active state to navigation based on scroll position
-window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
     
+    // Navigation active state
     let current = '';
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
@@ -74,7 +73,7 @@ window.addEventListener('scroll', () => {
 const style = document.createElement('style');
 style.textContent = `
     .nav-link.active {
-        color: #667eea !important;
+        color: #28a745 !important;
         font-weight: 600;
     }
     
@@ -84,28 +83,4 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Performance optimization: Throttle scroll events
-function throttle(func, limit) {
-    let inThrottle;
-    return function() {
-        const args = arguments;
-        const context = this;
-        if (!inThrottle) {
-            func.apply(context, args);
-            inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
-        }
-    }
-}
 
-// Apply throttling to scroll events
-const throttledScrollHandler = throttle(() => {
-    const header = document.querySelector('.header');
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-}, 16); // 60fps
-
-window.addEventListener('scroll', throttledScrollHandler);
