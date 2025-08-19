@@ -94,6 +94,61 @@ body {
     width: 100%;
 }
 
+/* Start Free Trial Button Styling */
+.nav-link[href="#start-trial"] {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white !important;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    font-size: 0.9rem;
+}
+
+/* Login Button Styling - matches secondary button */
+.nav-link[href="#login"] {
+    background: transparent;
+    color: #28a745 !important;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid #28a745;
+    font-size: 0.9rem;
+}
+
+.nav-link[href="#login"]:hover {
+    background: #28a745;
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(40, 167, 69, 0.3);
+}
+
+.nav-link[href="#login"]:hover::after {
+    display: none;
+}
+
+.nav-link[href="#login"]:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+.nav-link[href="#start-trial"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(40, 167, 69, 0.3);
+    background: linear-gradient(135deg, #20c997, #28a745);
+}
+
+.nav-link[href="#start-trial"]:hover::after {
+    display: none;
+}
+
+.nav-link[href="#start-trial"]:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
 /* Mobile Navigation Toggle */
 .nav-toggle {
     display: none;
@@ -179,11 +234,11 @@ body {
 /* Button Styles */
 .btn {
     display: inline-block;
-    padding: 15px 30px;
-    border-radius: 50px;
+    padding: 10px 20px;
+    border-radius: 40px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     transition: all 0.3s ease;
     border: 2px solid transparent;
     cursor: pointer;
@@ -280,9 +335,9 @@ body {
 }
 
 .screenshot {
-    width: 100%;
-    max-width: 350px;
-    height: auto;
+    width: 350px;
+    height: 600px;
+    object-fit: cover;
     border-radius: 15px;
     margin-bottom: 1rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -327,7 +382,8 @@ body {
     }
 
     .screenshot {
-        max-width: 280px;
+        width: 280px;
+        height: 480px;
     }
 }
 
@@ -1026,8 +1082,8 @@ body {
 .pricing-card .btn {
     width: 100%;
     margin-top: 20px;
-    padding: 15px 30px;
-    font-size: 18px;
+    padding: 10px 20px;
+    font-size: 16px;
     font-weight: 600;
 }
 
